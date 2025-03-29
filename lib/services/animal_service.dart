@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/animal.dart';
 
 class AnimalService {
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
+  //final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   // ✅ Lista privada para almacenar los datos de manera local
   final List<Animal> _animales = [

@@ -1,35 +1,27 @@
 import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class FirebaseService {
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance;
-
-  // ✅ Subir imagen a Firebase Storage
+  // ✅ Subir imagen (simulación)
   Future<String?> subirImagen(File imageFile) async {
     try {
-      String fileName = DateTime.now().millisecondsSinceEpoch.toString();
-      Reference ref = _storage.ref().child('animales/$fileName.jpg');
-      UploadTask uploadTask = ref.putFile(imageFile);
-      TaskSnapshot snapshot = await uploadTask;
-      String downloadUrl = await snapshot.ref.getDownloadURL();
-      return downloadUrl;
+      // Simulación de subida de imagen
+      print('Imagen subida correctamente (simulación)');
+      return 'https://ruta-simulada-de-la-imagen.com'; // Simulamos la URL de la imagen
     } catch (e) {
       print('Error al subir imagen: $e');
       return null;
     }
   }
 
-  // ✅ Guardar datos en Firestore
+  // ✅ Guardar datos de un animal (simulación)
   Future<void> registrarAnimal(Map<String, dynamic> datos) async {
     try {
-      await _db.collection('animales').add(datos);
-      print('✅ Animal registrado en Firestore');
+      // Simulación del registro en la base de datos
+      print('✅ Animal registrado (simulación): $datos');
     } catch (e) {
       print('❌ Error al registrar el animal: $e');
     }
   }
 }
 
-final firebaseService = FirebaseService(); // ✅ Instancia global
+final firebaseService = FirebaseService(); // Instancia global simulada

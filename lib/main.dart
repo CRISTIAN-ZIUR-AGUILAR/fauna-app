@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart'; // ✅ Importa la configuración generada
+//import 'package:firebase_core/firebase_core.dart';
+//import 'firebase_options.dart'; // ✅ Importa la configuración generada
 import 'screens/animal_list.dart'; // ✅ Para usuarios normales (solo lectura)
 import 'screens/dashboard_screen.dart'; // ✅ Para supervisores (edición y eliminación)
 import 'screens/login_page.dart'; // ✅ Página de login
@@ -11,9 +11,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // ✅ Inicializar Firebase (por ahora sin uso, pero ya listo para integrarse después)
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  //await Firebase.initializeApp(
+  // options: //DefaultFirebaseOptions.currentPlatform,
+ // );
 
   runApp(const MyApp());
 }
